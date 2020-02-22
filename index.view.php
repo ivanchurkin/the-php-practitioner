@@ -8,26 +8,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Tasks per day</h1>
     <ul>
-        <li>
-            <strong>Name:</strong> <?= $task['title'] ?>
-        </li>
-        <li>
-            <strong>Due Date:</strong> <?= $task['due'] ?>
-        </li>
-        <li>
-            <strong>Person Responsible:</strong> <?= $task['assigned_to'] ?>
-        </li>
-        <li>
-            <strong>Status:</strong>
-
-            <? if ($task['completed']) : ?>
-                <span class="icon">&#9989;</span>
-            <? else : ?>
-                <span class="icon">&#10062;</span>
-            <? endif; ?>
-        </li>
+        <?php foreach ($tasks as $task) : ?>
+            <li>
+                <?php if ($task->isComplete()) : ?>
+                    <s><?= $task->description; ?></s>
+                <?php else : ?>
+                    <?= $task->description; ?>
+                <?php endif; ?>
+            </li>
+        <? endforeach; ?>
     </ul>
 </body>
 </html>
