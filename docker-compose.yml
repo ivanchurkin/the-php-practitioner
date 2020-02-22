@@ -19,6 +19,25 @@ services:
     working_dir: /var/www/
     networks:
       - app-network
+  db:
+    container_name: db.local
+    image: mysql:latest
+    volumes:
+    - dbdata:/var/lib/mysql/
+    - ./conf/mysql/dumps/:/docker-entrypoint-initdb.d/
+    environment:
+      MYSQL_ROOT_PASSWORD: 1
+      MYSQL_DATABASE: todos
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 1
+    ports:
+      - 8081:3306
+    networks:
+      - app-network
+
+volumes:
+  dbdata:
+    driver: local
 
 networks:
   app-network:
