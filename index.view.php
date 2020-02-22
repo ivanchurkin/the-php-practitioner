@@ -11,16 +11,22 @@
     <h1>Tasks per day</h1>
     <ul>
         <li>
-            <strong>Title:</strong> <?= $task['name'] ?>
+            <strong>Name:</strong> <?= $task['title'] ?>
         </li>
         <li>
-            <strong>Due:</strong> <?= $task['due'] ?>
+            <strong>Due Date:</strong> <?= $task['due'] ?>
         </li>
         <li>
-            <strong>Assigned to:</strong> <?= $task['assigned_to'] ?>
+            <strong>Person Responsible:</strong> <?= $task['assigned_to'] ?>
         </li>
         <li>
-            <strong>Status:</strong> <?= $task['completed'] ? 'Complete' : 'Incomplete' ?>
+            <strong>Status:</strong>
+
+            <? if ($task['completed']) : ?>
+                <span class="icon">&#9989;</span>
+            <? else : ?>
+                <span class="icon">&#10062;</span>
+            <? endif; ?>
         </li>
     </ul>
 </body>
