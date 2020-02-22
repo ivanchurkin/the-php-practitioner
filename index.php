@@ -1,13 +1,10 @@
 <?php
 
-$person = [
-    'name' => 'Ivan',
-    'age' => '26',
-    'hair' => 'brown'
+$task = [
+    'name' => 'Do something',
+    'due' => 'today',
+    'assigned_to' => 'Ivan',
+    'completed' => false
 ];
-
-$person['birthday'] = '6 August 1993';
-
-unset($person['hair']);
 
 require 'index.view.php';

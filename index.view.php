@@ -8,10 +8,20 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Tasks per day</h1>
     <ul>
-        <?php foreach ($person as $key => $value) : ?>
-        <li><strong><?= $key ?>:</strong> <?= $value ?></li>
-        <?php endforeach; ?>
+        <li>
+            <strong>Title:</strong> <?= $task['name'] ?>
+        </li>
+        <li>
+            <strong>Due:</strong> <?= $task['due'] ?>
+        </li>
+        <li>
+            <strong>Assigned to:</strong> <?= $task['assigned_to'] ?>
+        </li>
+        <li>
+            <strong>Status:</strong> <?= $task['completed'] ? 'Complete' : 'Incomplete' ?>
+        </li>
     </ul>
 </body>
 </html>
