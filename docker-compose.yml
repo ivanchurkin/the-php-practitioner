@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  web:
+    container_name: web.local
+    image: nginx:stable-alpine
+    volumes:
+      - ./:/var/www/
+      - ./conf/nginx/:/etc/nginx/conf.d/
+    ports:
+      - 8080:80
+    networks:
+      - app-network
+  php:
+    container_name: php.local
+    image: php:7.4-fpm-alpine
+    volumes:
+      - ./:/var/www/
+    working_dir: /var/www/
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
