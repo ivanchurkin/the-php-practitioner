@@ -1,6 +1,6 @@
 <?php
 
-/** @var array $tasks */
-$tasks = $app['database']->selectAll('tasks');
+/** @var array $users */
+$users = $app['database']->selectAll('names');
 
 require 'views/index.view.php';

@@ -16,18 +16,17 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tasks`
+-- Table structure for table `names`
 --
 
-DROP TABLE IF EXISTS `tasks`;
+DROP TABLE IF EXISTS `names`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tasks` (
+CREATE TABLE `names` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `description` text NOT NULL,
-  `completed` tinyint(1) NOT NULL,
+  `name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -39,4 +38,4 @@ CREATE TABLE `tasks` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-02-22 21:32:11
+-- Dump completed on 2020-02-24 20:02:16
