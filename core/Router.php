@@ -2,9 +2,12 @@
 
 class Router
 {
-    protected array $routes;
+    protected array $routes = [
+        'GET' => [],
+        'POST' => []
+    ];
 
-    public static function load(string $file)
+    public static function load(string $file): Router
     {
         $router = new static();
 
@@ -13,14 +16,17 @@ class Router
         return $router;
     }
 
-    public function define(array $routes)
-    {
-        $this->routes = $routes;
+    public function get(string $path, string $controller): void {
+        $this->routes['GET'][$path] = $controller;
     }
 
-    public function direct(string $uri): string {
-        if (array_key_exists($uri, $this->routes)) {
-            return $this->routes[$uri];
+    public function post(string $path, string $controller): void {
+        $this->routes['POST'][$path] = $controller;
+    }
+
+    public function direct(string $uri, string $method): string {
+        if (array_key_exists($uri, $this->routes[$method])) {
+            return $this->routes[$method][$uri];
         }
 
         throw new Exception('Could not define route for this URI');
