@@ -1,6 +1,8 @@
 <?php
 
-/** @var array $users */
-$users = $app['database']->selectAll('names');
+/** @var QueryBuilder $db */
+$db = App::get('database');
+
+$users = $db->selectAll('names');
 
 require 'views/index.view.php';
