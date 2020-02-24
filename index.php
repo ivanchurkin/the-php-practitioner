@@ -1,10 +1,8 @@
 <?php
 
-require 'Task.php';
-require 'functions.php';
+/** @var $database QueryBuilder */
+$database = require 'bootstrap.php';
 
-$pdo = connectToDb();
-
-$tasks = fetchAllTasks($pdo);
+$tasks = $database->selectAll('tasks');
 
 require 'index.view.php';

@@ -11,7 +11,7 @@
     <ul>
         <?php foreach ($tasks as $task) : ?>
             <li>
-                <?php if ($task->isComplete()) : ?>
+                <?php if ($task->completed) : ?>
                     <s><?= $task->description; ?></s>
                 <?php else : ?>
                     <?= $task->description; ?>
