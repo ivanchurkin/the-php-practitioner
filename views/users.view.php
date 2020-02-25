@@ -1,6 +1,6 @@
 <?php require('partials/head.php'); ?>
 
-    <h1>Home</h1>
+    <h1>Users</h1>
 
     <ul>
         <?php foreach ($users as $user) : ?>
@@ -8,7 +8,7 @@
         <? endforeach; ?>
     </ul>
 
-    <form method="post" action="/names">
+    <form method="post" action="/users">
         <input type="text" name="name">
         <button>Send</button>
     </form>
